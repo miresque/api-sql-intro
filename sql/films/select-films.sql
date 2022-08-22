@@ -26,3 +26,17 @@ SELECT * FROM films WHERE genre != 'SciFi';
 SELECT * FROM films WHERE genre = 'Western' AND release_year < 2000;
 -- films that have the world "Matrix" in their title
 SELECT * FROM films WHERE title LIKE '%Matrix%';
+
+-- EXTENSION 1
+-- Return the average film rating
+SELECT AVG(score) FROM films;
+-- Return the total number of films
+SELECT COUNT(title) FROM films
+-- Return the average film rating by genre
+SELECT 
+	genre, 
+	AVG(score)
+FROM 
+	films
+GROUP BY
+	genre
